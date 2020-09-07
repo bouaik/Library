@@ -52,6 +52,7 @@
                         </div>`
 
         bookList.appendChild(bookDisplay)
+        clearfields() 
     }
 
     function removeItem (e) {
@@ -63,6 +64,16 @@
         }
     }
 
+
+    function clearfields() {
+        document.querySelector('.title').value = ""
+        document.querySelector('.author').value = ""
+        document.querySelector('.pages').value = ""
+        const read = document.getElementsByName('customRadioInline1'); 
+        read.forEach( (ele) => {
+            ele.checked = false
+        })
+      }
     
 
 
