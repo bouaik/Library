@@ -2,7 +2,6 @@
   const submit = document.querySelector('.submitBtn');
   const bookList = document.querySelector('.book-list');
 
-
   function Book(title, author, pages, read) {
     this.title = title;
     this.author = author;
@@ -34,13 +33,21 @@
                                 <h6 class="text-capitalize"><span class="badge badge-danger mr-2">number of pages
                                         :</span><span id="book-pages">${book.pages}</span></h6>
                                 <h6 class="text-capitalize"><span class="badge badge-info mr-2">Read ?
-                                    :</span><span id="book-red">${book.read}</span></h6>
+                                    :</span><span id="book-red" class="border bg-secondary px-2 py-1 book-read">${book.read}</span></h6>
                                 <a class="text-center delete-link d-block"><i class="far fa-trash-alt"></i></a>
                             </div>
                         </div>`;
 
     bookList.appendChild(bookDisplay);
     clearfields();
+
+    bookDisplay.addEventListener('click', e => {
+      if (e.target.textContent === 'yes') {
+        e.target.innerHTML = 'no';
+      } else if (e.target.textContent === 'no') {
+        e.target.innerHTML = 'yes';
+      }
+    });
   }
 
   function displaystorage() {

@@ -53,3 +53,7 @@ body {
   color: red;
   transform: scale(1.5);
 }
+
+#book-red {
+  cursor: pointer;
+}
