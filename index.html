@@ -1,22 +1,98 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
+
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/6887534a1e.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
     <title>Library</title>
-  </head>
-  <body>
+</head>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-11 mx-auto text-center my-5">
+                <form class="my-5" id="customer-form">
+                    <h3 class="text-capitalize">Library</h3>
+                    <div class="input-group my-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-book"></i></span>
+                        </div>
+                        <input type="text" class="form-control text-capitalize title" id="title" placeholder="title">
+                    </div>
+                    <div class="input-group my-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-user"></i></span>
+                        </div>
+                        <input type="text" class="form-control text-capitalize author" placeholder="author" id="author">
+                    </div>
+                    <div class="input-group my-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-file-alt"></i></span>
+                        </div>
+                        <input type="number" class="form-control text-capitalize pages" placeholder="number of pages"
+                            id="pages">
+                    </div>
+                    <div class="read d-flex">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text radius-none"><i class="fas fa-book-reader"></i></span>
+                        </div>
+                        <div class="custom-control custom-radio custom-control-inline pt-1 ml-4">
+                            <input type="radio" id="customRadioInline1" name="customRadioInline1"
+                                class="custom-control-input" value="yes">
+                            <label class="custom-control-label" for="customRadioInline1">Yes</label>
+                        </div>
+                        <div class="custom-control custom-radio custom-control-inline pt-1">
+                            <input type="radio" id="customRadioInline2" name="customRadioInline1"
+                                class="custom-control-input" value="no">
+                            <label class="custom-control-label" for="customRadioInline2">No</label>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-block submitBtn text-uppercase mt-4">submit</button>
+                </form>
+
+
+
+
+
+                <div class="row book-list">
+                    <div class="col-11 mx-auto col-md-6 col-lg-4 my-3">
+                        <div class="card text-left">
+                            <div class="card-body">
+                                <h6 class="text-capitalize "><span class="badge badge-warning mr-2">title :</span><span
+                                        id="book-title"> john anderson</span></h6>
+                                <h6 class="text-capitalize my-3"><span class="badge badge-success mr-2">author
+                                        :</span><span id="book-author">
+                                        css basics
+                                    </span></h6>
+                                <h6 class="text-capitalize"><span class="badge badge-danger mr-2">number of pages
+                                        :</span><span id="book-pages"> john anderson</span></h6>
+                                <h6 class="text-capitalize"><span class="badge badge-info mr-2">Read ?
+                                    :</span><span id="book-red"> yes</span></h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
     <script src="app.js"></script>
-  </body>
+</body>
+
 </html>
