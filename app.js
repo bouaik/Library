@@ -3,8 +3,10 @@
     let myLibrary = [];
 
     const submit = document.querySelector('.submitBtn')
+    const bookList = document.querySelector('.book-list')
 
     submit.addEventListener('click', addBookToLibrary)
+    bookList.addEventListener('click', removeItem)
 
     function Book(title, author, pages, read) {
         this.title = title;
@@ -30,11 +32,7 @@
         display(book)
     }
 
-
-    myLibrary.forEach( book => display(book))
-
     function display(book) {
-        const bookList = document.querySelector('.book-list')
         const bookDisplay = document.createElement('div')
         bookDisplay.classList.add('col-11', 'mx-auto', 'col-md-6', 'col-lg-4', 'my-3')
         bookDisplay.innerHTML = `<div class="card text-left">
@@ -49,11 +47,22 @@
                                         :</span><span id="book-pages">${book.pages}</span></h6>
                                 <h6 class="text-capitalize"><span class="badge badge-info mr-2">Read ?
                                     :</span><span id="book-red">${book.read}</span></h6>
+                                <a class="text-center delete-link d-block"><i class="far fa-trash-alt"></i></a>
                             </div>
                         </div>`
 
         bookList.appendChild(bookDisplay)
     }
+
+    function removeItem (e) {
+        e.preventDefault()
+        let link = e.target.parentElement
+        if (link.classList.contains('delete-link')) {
+            let book = link.parentElement.parentElement.parentElement
+            bookList.removeChild(book)
+        }
+    }
+
     
 
 
