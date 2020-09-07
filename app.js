@@ -7,6 +7,7 @@
 
     submit.addEventListener('click', addBookToLibrary)
     bookList.addEventListener('click', removeItem)
+    document.addEventListener('DOMContentLoaded', displaystorage)
 
     function Book(title, author, pages, read) {
         this.title = title;
@@ -30,6 +31,7 @@
 
         const book = new Book(title, author, pages, res)
         display(book)
+        updateStorage(book)
     }
 
     function display(book) {
@@ -74,7 +76,28 @@
             ele.checked = false
         })
       }
+
+
+    function updateStorage(book) {
+        let bookList 
+        
+        bookList = localStorage.getItem('bookList') ? JSON.parse(localStorage.getItem('bookList')) : []
+        bookList.push(book)
+        localStorage.setItem('bookList', JSON.stringify(bookList))
+    }
+
+    function displaystorage () {
+        let exists = localStorage.getItem('bookList')
     
+        if(exists) {
+            let storageItems = JSON.parse(localStorage.getItem('bookList'))
+    
+            storageItems.forEach( function (element) {
+                display(element)
+            })
+        }
+    }
+
 
 
 })();
