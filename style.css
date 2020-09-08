@@ -1,0 +1,59 @@
+:root {
+  --mainWhite: #f7f9f9;
+  --mainBrown: #a76d60;
+  --darkBrown: #601700;
+}
+
+body {
+  background: var(--mainWhite);
+}
+
+.input-group-text {
+  background: var(--mainBrown);
+  color: var(--mainWhite);
+  border-color: var(--mainBrown);
+}
+
+.form-control {
+  border: 0.2rem solid var(--mainBrown);
+}
+
+.submitBtn {
+  color: var(--darkBrown);
+  background: var(--mainWhite);
+  border: 0.2rem solid var(--darkBrown);
+  transition: all 1s ease-in-out;
+}
+
+.submitBtn:hover {
+  background: var(--darkBrown);
+  color: var(--mainWhite);
+}
+
+.showItem {
+  display: block;
+}
+
+.read {
+  border: 3px solid var(--mainBrown);
+  border-radius: 4px;
+  color: #495057;
+}
+
+.radius-none {
+  border-radius: 0;
+}
+
+.far {
+  transition: all 1s linear;
+}
+
+.far:hover {
+  cursor: pointer;
+  color: red;
+  transform: scale(1.5);
+}
+
+#book-red {
+  cursor: pointer;
+}
